@@ -1,0 +1,8 @@
+1. create client https://blog.soshace.com/en/javascript/apollo-client-and-local-state-management/
+2. create  server 
+3. read note
+4. docker-compose
+5 styling
+6. create note
+7. search
+8. delete
