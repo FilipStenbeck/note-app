@@ -55,7 +55,13 @@ export default function Main() {
                                 <NotesList notes={data.notes}></NotesList>
                             </Grid>
                             <Grid item xs={12} sm={8} ms={8} lg={8} lg={8}>
-                                <NoteDisplay note={data.notes[noteId]} />
+                                <NoteDisplay
+                                    note={
+                                        data.notes.filter(
+                                            note => note.id === noteId
+                                        )[0]
+                                    }
+                                />
                             </Grid>
                         </Grid>
                     </div>
