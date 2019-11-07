@@ -62,7 +62,10 @@ export default function NotesDisplay({ note }) {
 
     const onDelete = () => {
         deleteNote({ variables: { id: currentNote.id } });
-        setToHome(true);
+        //setToHome(true);
+
+        //temporary fix until I can figure out why state is not updated
+        window.location = window.config.REACT_APP_ROOT;
     };
     if (!currentNote) return <div></div>;
     return (

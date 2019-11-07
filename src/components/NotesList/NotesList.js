@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link as RouterLink } from 'react-router-dom';
@@ -38,11 +38,10 @@ const NotesListItem = ({ id, title, classes }) => (
 
 export default function NotesList({ notes }) {
     const classes = useStyles();
-    const [noteList, setNoteList] = useState(notes);
 
     return (
         <ul className={classes.list}>
-            {noteList.map(note => (
+            {notes.map(note => (
                 <NotesListItem
                     key={note.id}
                     classes={classes}
