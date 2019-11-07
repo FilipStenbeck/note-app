@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { gql } from 'apollo-boost';
@@ -42,10 +42,6 @@ const useStyles = makeStyles(theme => ({
 export default function Main() {
     const classes = useStyles();
     const { noteId } = useParams();
-
-    useEffect(() => {
-        console.log(noteId);
-    }, [noteId]);
 
     return (
         <Query query={GET_NOTES} fetchPolicy={'network-only'}>
