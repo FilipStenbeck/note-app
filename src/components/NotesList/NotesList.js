@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,15 +22,26 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+const NotesListItem = ({ id, title, classes }) => (
+    <li className={classes.listItem}>
+        <Paper className={classes.paper}>
+            <Link to={`/note/${id}`}> {title}</Link>
+        </Paper>
+    </li>
+);
+
 export default function NotesList({ notes }) {
     const classes = useStyles();
 
     return (
         <ul className={classes.list}>
             {notes.map(note => (
-                <li key={note.id} className={classes.listItem}>
-                    <Paper className={classes.paper}>{note.title}</Paper>
-                </li>
+                <NotesListItem
+                    key={note.id}
+                    classes={classes}
+                    id={note.id}
+                    title={note.title}
+                />
             ))}
         </ul>
     );
