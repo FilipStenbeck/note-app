@@ -29,7 +29,7 @@ const WrappedLink = React.forwardRef((props, ref) => (
 ));
 
 const NotesListItem = ({ id, title, classes }) => (
-    <li className={classes.listItem}>
+    <li data-testid="noteItem" className={classes.listItem}>
         <Link component={WrappedLink} to={`/note/${id}`}>
             <Paper className={classes.paper}>{title}</Paper>
         </Link>

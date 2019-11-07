@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { Redirect } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
@@ -30,18 +30,14 @@ const SAVE_NOTE = gql`
     }
 `;
 
-export default function NewNote({ note }) {
+export default function NewNote({ initial }) {
     const classes = useStyles();
-    const [currentNote, setCurrentNote] = useState({ note });
+    const [note, setNote] = useState({ initial });
     const [toHome, setToHome] = useState(false);
     const [saveNote] = useMutation(SAVE_NOTE);
 
-    useEffect(() => {
-        setCurrentNote(note);
-    }, [note]);
-
     const onSave = () => {
-        saveNote({ variables: currentNote });
+        saveNote({ variables: note });
         setToHome(true);
     };
 
@@ -55,12 +51,12 @@ export default function NewNote({ note }) {
                         aria-label="minimum height"
                         rows={15}
                         onChange={e => {
-                            setCurrentNote({
-                                ...currentNote,
+                            setNote({
+                                ...note,
                                 body: e.target.value
                             });
                         }}
-                        value={currentNote.body}
+                        value={note.body}
                     />
                 </FormControl>
 
@@ -71,20 +67,21 @@ export default function NewNote({ note }) {
                     margin="normal"
                     variant="outlined"
                     onChange={e => {
-                        setCurrentNote({
-                            ...currentNote,
+                        setNote({
+                            ...note,
                             title: e.target.value
                         });
                     }}
                 />
                 <div>
                     <Button
+                        data-testid="save"
                         variant="contained"
                         color="primary"
                         size="large"
                         className={classes.button}
                         onClick={onSave}
-                        value={currentNote.title}
+                        value={note.title}
                         startIcon={<SaveIcon />}
                     >
                         Save

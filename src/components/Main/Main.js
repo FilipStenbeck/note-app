@@ -3,10 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import { useQuery } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import NotesList from '../NotesList';
 import NoteDisplay from '../NoteDisplay';
 

@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -44,6 +45,7 @@ export default function NotesDisplay({ note }) {
     const classes = useStyles();
     const [currentNote, setCurrentNote] = useState(note);
     const [toHome, setToHome] = useState(false);
+    const [open, setOpen] = useState(false);
     const [saveNote] = useMutation(SAVE_NOTE);
     const [deleteNote] = useMutation(DELETE_NOTE);
 
@@ -53,10 +55,11 @@ export default function NotesDisplay({ note }) {
 
     const onSave = () => {
         saveNote({ variables: currentNote });
+        setOpen(true);
+        setTimeout(() => setOpen(false), 3000);
     };
 
     const onDelete = () => {
-        console.log('deleteing', currentNote.id);
         deleteNote({ variables: { id: currentNote.id } });
         setToHome(true);
     };
@@ -97,6 +100,14 @@ export default function NotesDisplay({ note }) {
                     Save
                 </Button>
             </Paper>
+
+            <Snackbar
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                key={`bottom,right`}
+                open={open}
+                onClose={null}
+                message={<span>Note saved.</span>}
+            />
         </div>
     );
 }
