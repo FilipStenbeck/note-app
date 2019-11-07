@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+    note-app:
+        image: note-app:latest
+        restart: always
+        env_file:
+            - ./.env
+
+        ports:
+            - 3000:3000
+    note-app-api:
+        image: note-app-api:latest
+        restart: always
+
+        ports:
+            - 4000:4000
