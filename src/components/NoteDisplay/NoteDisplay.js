@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/react-hooks';
+import { useParams } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import { gql } from 'apollo-boost';
-import TextField from '@material-ui/core/TextField';
 import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 import DeleteIcon from '@material-ui/icons/Delete';
 
@@ -35,8 +34,12 @@ export default function NotesDisplay({ note }) {
     const classes = useStyles();
     const [currentNote, setCurrentNote] = useState(note);
     const [saveNote, { data }] = useMutation(SAVE_NOTE);
+
+    useEffect(() => {
+        setCurrentNote(note);
+    }, [note]);
+
     const onSave = () => {
-        console.log(currentNote);
         saveNote({ variables: currentNote });
     };
 
@@ -51,7 +54,7 @@ export default function NotesDisplay({ note }) {
                         onChange={e =>
                             setCurrentNote({ ...note, body: e.target.value })
                         }
-                        defaultValue={currentNote.body}
+                        value={currentNote.body}
                     />
                 </FormControl>
                 <Button
