@@ -51,12 +51,13 @@ export default function NotesDisplay({ note }) {
 
     useEffect(() => {
         setCurrentNote(note);
+        setToHome(false);
     }, [note]);
 
     const onSave = () => {
         saveNote({ variables: currentNote });
         setOpen(true);
-        setTimeout(() => setOpen(false), 3000);
+        setTimeout(() => setOpen(false), 1500);
     };
 
     const onDelete = () => {
@@ -105,8 +106,7 @@ export default function NotesDisplay({ note }) {
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 key={`bottom,right`}
                 open={open}
-                onClose={null}
-                message={<span>Note saved.</span>}
+                message={<span>{note ? note.title : ''} has been saved.</span>}
             />
         </div>
     );

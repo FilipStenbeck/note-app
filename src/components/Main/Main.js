@@ -47,6 +47,7 @@ export default function Main() {
                 if (error) {
                     return <div>Something is horribly wrong</div>;
                 }
+                console.log(data.notes);
 
                 return (
                     <div className={classes.root}>
