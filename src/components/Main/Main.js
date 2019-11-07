@@ -51,10 +51,10 @@ export default function Main() {
                 return (
                     <div className={classes.root}>
                         <Grid container spacing={3}>
-                            <Grid item xs={12} sm={4} ms={4} lg={4} lg={4}>
+                            <Grid item xs={12} sm={4} ms={4} lg={4} xl={4}>
                                 <NotesList notes={data.notes}></NotesList>
                             </Grid>
-                            <Grid item xs={12} sm={8} ms={8} lg={8} lg={8}>
+                            <Grid item xs={12} sm={8} ms={8} lg={8} xl={8}>
                                 <NoteDisplay
                                     note={
                                         data.notes.filter(

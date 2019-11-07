@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 //import { Link } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
-import { fontWeight } from '@material-ui/system';
-import { black } from 'ansi-colors';
 
 const useStyles = makeStyles(theme => ({
     root: {

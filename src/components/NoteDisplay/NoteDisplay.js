@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { useParams } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import { gql } from 'apollo-boost';
 import InputBase from '@material-ui/core/InputBase';
@@ -30,10 +29,21 @@ const SAVE_NOTE = gql`
         }
     }
 `;
+
+const DELETE_NOTE = gql`
+    mutation deleteNote($id: String) {
+        deleteNote(id: $id) {
+            status
+            message
+        }
+    }
+`;
+
 export default function NotesDisplay({ note }) {
     const classes = useStyles();
     const [currentNote, setCurrentNote] = useState(note);
-    const [saveNote, { data }] = useMutation(SAVE_NOTE);
+    const [saveNote] = useMutation(SAVE_NOTE);
+    const [deleteNote] = useMutation(DELETE_NOTE);
 
     useEffect(() => {
         setCurrentNote(note);
@@ -43,6 +53,11 @@ export default function NotesDisplay({ note }) {
         saveNote({ variables: currentNote });
     };
 
+    const onDelete = () => {
+        console.log('deleteing', currentNote.id);
+        deleteNote({ variables: { id: currentNote.id } });
+    };
+    if (!currentNote) return <div></div>;
     return (
         <div>
             <Paper className={classes.paper}>
@@ -50,7 +65,7 @@ export default function NotesDisplay({ note }) {
                     <InputBase
                         multiline
                         aria-label="minimum height"
-                        rows={20}
+                        rows={15}
                         onChange={e =>
                             setCurrentNote({ ...note, body: e.target.value })
                         }
@@ -62,6 +77,7 @@ export default function NotesDisplay({ note }) {
                     color="secondary"
                     size="large"
                     className={classes.button}
+                    onClick={onDelete}
                     startIcon={<DeleteIcon />}
                 >
                     Delete
