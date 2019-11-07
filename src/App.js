@@ -5,11 +5,16 @@ import Box from '@material-ui/core/Box';
 import Main from './components/Main';
 import Header from './components/Header';
 import ErrorBoundary from './ErrorBoundary';
+import NewNote from './components/NewNote';
 
 export default function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/new">
+                    <New />
+                </Route>
+
                 <Route path="/note/:noteId">
                     <Content />
                 </Route>
@@ -21,6 +26,17 @@ export default function App() {
         </Router>
     );
 }
+
+const New = () => (
+    <ErrorBoundary>
+        <Container maxWidth="lg">
+            <Header />
+            <Box my={4}>
+                <NewNote note={{ body: '', title: '' }} />
+            </Box>
+        </Container>
+    </ErrorBoundary>
+);
 
 const Content = () => (
     <ErrorBoundary>

@@ -4,10 +4,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles(theme => ({
     grow: {
         flexGrow: 1
+    },
+    fab: {
+        margin: theme.spacing(1)
     },
 
     title: {
@@ -47,8 +52,15 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('md')]: {
             display: 'flex'
         }
+    },
+    link: {
+        color: 'white'
     }
 }));
+
+const WrappedLink = React.forwardRef((props, ref) => (
+    <RouterLink innerRef={ref} {...props} />
+));
 
 export default function Header() {
     const classes = useStyles();
@@ -58,7 +70,13 @@ export default function Header() {
             <AppBar position="static">
                 <Toolbar>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        Notes
+                        <Link
+                            component={WrappedLink}
+                            className={classes.link}
+                            to={`/`}
+                        >
+                            Notes
+                        </Link>
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}></div>
@@ -71,6 +89,13 @@ export default function Header() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <Link
+                        component={WrappedLink}
+                        className={classes.link}
+                        to={`/new`}
+                    >
+                        Create new
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>

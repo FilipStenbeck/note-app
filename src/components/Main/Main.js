@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import NotesList from '../NotesList';
 import NoteDisplay from '../NoteDisplay';
 
@@ -40,8 +43,12 @@ export default function Main() {
     const classes = useStyles();
     const { noteId } = useParams();
 
+    useEffect(() => {
+        console.log(noteId);
+    }, [noteId]);
+
     return (
-        <Query query={GET_NOTES}>
+        <Query query={GET_NOTES} fetchPolicy={'network-only'}>
             {({ loading, error, data = [] }) => {
                 if (loading) return <div>Loading...</div>;
                 if (error) {
