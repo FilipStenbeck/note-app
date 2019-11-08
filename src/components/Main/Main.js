@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 import { useParams } from 'react-router-dom';
 import NotesList from '../NotesList';
 import NoteDisplay from '../NoteDisplay';
+import useStyles from './style';
 
 const GET_NOTES = gql`
     query {
@@ -16,25 +16,6 @@ const GET_NOTES = gql`
         }
     }
 `;
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1
-    },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary
-    },
-    list: {
-        listStyleType: 'none',
-        margin: 'inherit',
-        padding: 'unset'
-    },
-    listItem: {
-        paddingBottom: '1em'
-    }
-}));
 
 export default function Main() {
     const classes = useStyles();

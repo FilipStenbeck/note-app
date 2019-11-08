@@ -5,21 +5,10 @@ import Paper from '@material-ui/core/Paper';
 import { gql } from 'apollo-boost';
 import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';
-
-const useStyles = makeStyles(theme => ({
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary
-    },
-    button: {
-        margin: theme.spacing(1)
-    }
-}));
+import useStyles from './style';
 
 const SAVE_NOTE = gql`
     mutation addNote($title: String, $body: String) {
