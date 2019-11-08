@@ -80,7 +80,7 @@ yarn docker:build
 To start both the *app* and *api* run:
 
 ```sh
-docker-conpose up
+docker-compose up
 ```
 
 
