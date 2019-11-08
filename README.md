@@ -12,9 +12,9 @@ All notes are being persited in a database.
 
 ### Architecture
 
-The application consist of a React application and a [graphQl backend API](https://www.google.com).
+The application consist of a React application and a [graphQl backend API](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to start, so make sure this is up before starting this application.
-This repo also includes a note server that can be used for servering the application.
+This repo also includes a node server that can be used for servering the application.
 
 ### Dependencies (major)
 
