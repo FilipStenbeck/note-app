@@ -12,15 +12,15 @@ All notes are being persited in a database.
 
 ### Architecture
 
-The application consist of a React application and a [graphQl backend API](https://www.google.com).
+The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to start, so make sure this is up before starting this application.
-This repo also includes a note server that can be used for servering the application.
+This repo also includes a node server that can be used for servering the application.
 
 ### Dependencies (major)
 
 List of major libraries and tools:
 
--   React (and creaste-react-app)
+-   React (and create-react-app)
 -   Apollo
 -   Material-Ui
 -   Express
@@ -34,11 +34,18 @@ yarn
 yarn dev
 ```
 
-**Important** The app requires that the backend API is up and running to function.
+**Important** The app requires that the backend API is up and running to work. Before starting make sure that the API is up.
 
 ## Configuration
 
-For convinience, áll needed environment variables is commited in a _.env_ file (I would not do that in a real project)
+For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
+
+## Test
+There are som test included, to run test:
+
+```sh
+yarn test
+```
 
 ## Production
 
@@ -65,12 +72,15 @@ yarn start
 Build a docker image from the _Dockerfile_ included.
 To start both the app and the needed api. First make sure you have built both docker images then run:
 
-```sh
-docker-conpose up
-```
-
 The following command can be used to make a docker image
 
 ```sh
 yarn docker:build
 ```
+To start both the *app* and *api* run:
+
+```sh
+docker-conpose up
+```
+
+
