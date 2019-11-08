@@ -17,7 +17,6 @@ describe('Header', () => {
 
     it('It contain 2 links', () => {
         const wrapper = shallow(<Header />);
-
         expect(wrapper.find(Link)).toHaveLength(2);
     });
 });
