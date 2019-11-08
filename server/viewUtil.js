@@ -1,8 +1,7 @@
 const assetsManifest = require('../build/asset-manifest.json');
-const { BASE_PATH, EXCLUDE_SCRIPTS } = require('./constants');
 const normalizePath = path => path.replace(/(?<!:)\/\//g, '/');
 const joinPath = (...paths) => normalizePath(paths.join('/'));
-const rootPath = normalizePath(BASE_PATH);
+const rootPath = '';
 
 const manifest = `<link rel="manifest" href="${joinPath(
     rootPath,
@@ -13,17 +12,15 @@ const favicon = `<link rel="shortcut icon" href="${joinPath(
     'favicon.ico'
 )}">`;
 
-const scripts = Object.keys(assetsManifest.files)
-    .filter(jsFile => !EXCLUDE_SCRIPTS.includes(jsFile))
-    .reduce((accumulated, key) => {
-        const jsFile = assetsManifest.files[key];
-        return (
-            accumulated +
-            (jsFile.endsWith('.js')
-                ? `<script src="${joinPath(rootPath, jsFile)}"></script>`
-                : '')
-        );
-    }, '');
+const scripts = Object.keys(assetsManifest.files).reduce((accumulated, key) => {
+    const jsFile = assetsManifest.files[key];
+    return (
+        accumulated +
+        (jsFile.endsWith('.js')
+            ? `<script src="${joinPath(rootPath, jsFile)}"></script>`
+            : '')
+    );
+}, '');
 
 const css = Object.keys(assetsManifest.files).reduce((accumulated, key) => {
     const cssFile = assetsManifest.files[key];

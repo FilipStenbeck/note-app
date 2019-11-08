@@ -4,8 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { css, manifest, favicon, scripts } = require('./viewUtil');
 const { name, version } = require('../package.json');
-const { BASE_PATH } = require('./constants');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 
@@ -13,12 +12,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
-app.get(`${BASE_PATH}/health`, (req, res) =>
+app.get(`/health`, (req, res) =>
     res.status(200).json({ name, version, status: 'up' })
 );
 
 const buildPath = express.static(path.join(__dirname, '../build'));
-app.use(BASE_PATH, buildPath);
+app.use('', buildPath);
 let apiHost;
 
 if (process.env.REACT_APP_API_ROOT) {
@@ -31,7 +30,7 @@ if (process.env.REACT_APP_API_ROOT) {
 }
 console.log(css);
 
-app.get(`${BASE_PATH}/*`, function(req, res) {
+app.get('/*', function(req, res) {
     res.render('index', {
         config: { REACT_APP_API_ROOT: apiHost },
         css,
@@ -42,5 +41,5 @@ app.get(`${BASE_PATH}/*`, function(req, res) {
 });
 
 app.listen(PORT, () =>
-    console.log(`server running on on http://localhost:${PORT}/${BASE_PATH}`)
+    console.log(`server running on on http://localhost:${PORT}}`)
 );
