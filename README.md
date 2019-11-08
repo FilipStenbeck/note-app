@@ -12,7 +12,7 @@ All notes are being persited in a database.
 
 ### Architecture
 
-The application consist of a React application and a [GraphQl backend API](https://github.com/FilipStenbeck/note-app-api).
+The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to start, so make sure this is up before starting this application.
 This repo also includes a node server that can be used for servering the application.
 
@@ -20,7 +20,7 @@ This repo also includes a node server that can be used for servering the applica
 
 List of major libraries and tools:
 
--   React (and creaste-react-app)
+-   React (and create-react-app)
 -   Apollo
 -   Material-Ui
 -   Express
@@ -39,6 +39,13 @@ yarn dev
 ## Configuration
 
 For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
+
+## Test
+There are som test included, to run test:
+
+```sh
+yarn test
+```
 
 ## Production
 
