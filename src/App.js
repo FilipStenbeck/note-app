@@ -12,39 +12,32 @@ export default function App() {
         <Router>
             <Switch>
                 <Route path="/new">
-                    <New />
+                    <Content>
+                        <NewNote note={{ body: '', title: '' }} />
+                    </Content>
                 </Route>
 
                 <Route path="/note/:noteId">
-                    <Content />
+                    <Content>
+                        <Main />
+                    </Content>
                 </Route>
 
                 <Route path="/">
-                    <Content />
+                    <Content>
+                        <Main />
+                    </Content>
                 </Route>
             </Switch>
         </Router>
     );
 }
 
-const New = () => (
+const Content = props => (
     <ErrorBoundary>
         <Container maxWidth="lg">
             <Header />
-            <Box my={4}>
-                <NewNote note={{ body: '', title: '' }} />
-            </Box>
-        </Container>
-    </ErrorBoundary>
-);
-
-const Content = () => (
-    <ErrorBoundary>
-        <Container maxWidth="lg">
-            <Header />
-            <Box my={4}>
-                <Main />
-            </Box>
+            <Box my={4}>{props.children}</Box>
         </Container>
     </ErrorBoundary>
 );
