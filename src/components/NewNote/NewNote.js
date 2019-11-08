@@ -36,6 +36,7 @@ export default function NewNote({ initial }) {
             <Paper className={classes.paper}>
                 <FormControl fullWidth className={classes.margin}>
                     <InputBase
+                        autoFocus
                         multiline
                         aria-label="minimum height"
                         rows={15}
