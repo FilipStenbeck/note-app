@@ -1,4 +1,4 @@
-# Note app
+# Taking Notes
 
 ## How to use
 
