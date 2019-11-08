@@ -61,7 +61,7 @@ yarn build
 
 ## Run
 
-To run the application using the production ready build and serve in using the included node.js express server:
+To run the application using the production ready build and serve it using the included node.js express server:
 
 ```sh
 yarn start
@@ -70,14 +70,14 @@ yarn start
 ## Docker
 
 Build a docker image from the _Dockerfile_ included.
-To start both the app and the needed api. First make sure you have built both docker images then run:
+To start both the app and the needed api. First make sure you have built **both** docker images. Instruction on how to build the docker for the **API**](https://github.com/FilipStenbeck/note-app-api)
 
-The following command can be used to make a docker image
+The following command can be used to create a docker image of the app:
 
 ```sh
 yarn docker:build
 ```
-To start both the *app* and *api* run:
+Once *both* docker images is built, start both the *app* and *api* by running:
 
 ```sh
 docker-compose up
