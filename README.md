@@ -40,6 +40,12 @@ yarn dev
 
 For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
 
+### ENVIRONMENT variables
+The following environment variables is used in the application
+
+- **REACT_APP_API_ROOT** : url to API root (Example http://localhost:4000)
+- **REACT_APP_ROOT** : url to APP root  (Example http://localhost:3000)
+
 ## Test
 There are som test included, to run test:
 
@@ -61,16 +67,17 @@ yarn build
 
 ## Run
 
-To run the application using the production ready build and serve it using the included node.js express server:
+To run the application using the production ready build and serve it using the included node.js express server. 
 
 ```sh
 yarn start
 ```
+When running the application with _yarn start_ the ENVIRONMENT variables are set to default values.
 
 ## Docker
 
 Build a docker image from the _Dockerfile_ included.
-To start both the app and the needed api. First make sure you have built **both** docker images. Instruction on how to build the docker for the **API**](https://github.com/FilipStenbeck/note-app-api)
+To start both the app and the needed api. First make sure you have built **both** docker images. Instruction on how to build the docker for the [**API**](https://github.com/FilipStenbeck/note-app-api)
 
 The following command can be used to create a docker image of the app:
 
@@ -82,5 +89,6 @@ Once *both* docker images is built, start both the *app* and *api* by running:
 ```sh
 docker-compose up
 ```
+When running the application with _docker-compose_ the ENVIRONMENT variables are picket up from the **.env** file
 
 
