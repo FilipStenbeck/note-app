@@ -73,16 +73,6 @@ export default function NotesDisplay({ note }) {
                 </FormControl>
                 <Button
                     variant="contained"
-                    color="secondary"
-                    size="large"
-                    className={classes.button}
-                    onClick={onDelete}
-                    startIcon={<DeleteIcon />}
-                >
-                    Delete
-                </Button>
-                <Button
-                    variant="contained"
                     color="primary"
                     size="large"
                     className={classes.button}
@@ -90,6 +80,16 @@ export default function NotesDisplay({ note }) {
                     startIcon={<SaveIcon />}
                 >
                     Save
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    size="large"
+                    className={classes.button}
+                    onClick={onDelete}
+                    startIcon={<DeleteIcon />}
+                >
+                    Delete
                 </Button>
             </Paper>
 
