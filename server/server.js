@@ -28,11 +28,19 @@ if (process.env.REACT_APP_API_ROOT) {
         'No api host set, please use env variable REACT_APP_API_ROOT to set host'
     );
 }
-console.log(css);
+
+if (process.env.REACT_APP_ROOT) {
+    console.log(`REACT_APP_ROOT: ${process.env.REACT_APP_ROOT}`);
+    appHost = process.env.REACT_APP_ROOT;
+} else {
+    console.log(
+        'No api host set, please use env variable REACT_APP_API_ROOT to set host'
+    );
+}
 
 app.get('/*', function(req, res) {
     res.render('index', {
-        config: { REACT_APP_API_ROOT: apiHost },
+        config: { REACT_APP_API_ROOT: apiHost, REACT_APP_ROOT: appHost },
         css,
         manifest,
         favicon,
