@@ -59,13 +59,20 @@ To make a production optimized build:
 yarn build
 ```
 
+### ENVIRONMENT variables
+The following environment variables is used in the application
+
+- **REACT_APP_API_ROOT** : url to API root (Example http://localhost:4000)
+- **REACT_APP_ROOT** : url to APP root  (Example http://localhost:3000)
+
 ## Run
 
-To run the application using the production ready build and serve it using the included node.js express server:
+To run the application using the production ready build and serve it using the included node.js express server. 
 
 ```sh
 yarn start
 ```
+When running the application with _yarn start_ the ENVIRONMENT variables are set to default values.
 
 ## Docker
 
@@ -82,5 +89,6 @@ Once *both* docker images is built, start both the *app* and *api* by running:
 ```sh
 docker-compose up
 ```
+When running the application with _docker-compose_ the ENVIRONMENT variables picket up from the **.env** file
 
 
