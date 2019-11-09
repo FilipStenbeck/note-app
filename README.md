@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a note takin application. Implemented features are
+This is a note taking application. Implemented features are
 
 -   Create a note
 -   Edit and save notes
@@ -13,8 +13,8 @@ All notes are being persited in a database.
 ### Architecture
 
 The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
-The API is needed for the application to start, so make sure this is up before starting this application.
-This repo also includes a node server that can be used for servering the application.
+The API is needed for the application to run, so make sure the API is up before starting the frontend application.
+This repo includes a node express server that can be used for servering the app once it is built.
 
 ### Dependencies (major)
 
@@ -22,12 +22,12 @@ List of major libraries and tools:
 
 -   React (and create-react-app)
 -   Apollo
--   Material-Ui
+-   Material-UI
 -   Express
 
 ## How to use
 
-Install it and run in dev mode:
+Install and run in the app in development mode:
 
 ```sh
 yarn
@@ -55,7 +55,7 @@ yarn test
 
 ## Production
 
-Below is the detail to build and run the application in production mode
+Below is the details on how to build and run the application in production mode
 
 ## Build
 
@@ -84,11 +84,11 @@ The following command can be used to create a docker image of the app:
 ```sh
 yarn docker:build
 ```
-Once *both* docker images is built, start both the *app* and *api* by running:
+Once *both* docker images are built, start both the *app* and *api* by running:
 
 ```sh
 docker-compose up
 ```
-When running the application with _docker-compose_ the ENVIRONMENT variables are picket up from the **.env** file
+When running the application with _docker-compose_ the ENVIRONMENT variables are picked up from the **.env** file
 
 
