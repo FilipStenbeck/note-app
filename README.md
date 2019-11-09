@@ -89,6 +89,6 @@ Once *both* docker images is built, start both the *app* and *api* by running:
 ```sh
 docker-compose up
 ```
-When running the application with _docker-compose_ the ENVIRONMENT variables picket up from the **.env** file
+When running the application with _docker-compose_ the ENVIRONMENT variables are picket up from the **.env** file
 
 
