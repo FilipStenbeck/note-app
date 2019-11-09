@@ -4,11 +4,10 @@
     "author": "Filip Stenbeck",
     "license": "ISC",
     "scripts": {
-        "start": "REACT_APP_API_ROOT=http://localhost:4000 node server/server.js",
+        "start": "REACT_APP_API_ROOT=http://localhost:4000 REACT_APP_ROOT=http://localhost:3000 node server/server.js",
         "dev": "chmod +x ./extract-env.sh && ./extract-env.sh && cp env-config.js ./public/ && react-scripts start",
         "build": "react-scripts build",
         "docker:build": "docker build . -t note-app:latest",
-        "docker:run": "docker run -d -p 3000:3000 -e REACT_APP_API_ROOT=http://localhost:4000 -t note-app:latest",
         "test": "CI=true react-scripts test",
         "test:watch": "react-scripts test",
         "eject": "react-scripts eject"
