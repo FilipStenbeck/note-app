@@ -40,6 +40,12 @@ yarn dev
 
 For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
 
+### ENVIRONMENT variables
+The following environment variables is used in the application
+
+- **REACT_APP_API_ROOT** : url to API root (Example http://localhost:4000)
+- **REACT_APP_ROOT** : url to APP root  (Example http://localhost:3000)
+
 ## Test
 There are som test included, to run test:
 
@@ -59,11 +65,6 @@ To make a production optimized build:
 yarn build
 ```
 
-### ENVIRONMENT variables
-The following environment variables is used in the application
-
-- **REACT_APP_API_ROOT** : url to API root (Example http://localhost:4000)
-- **REACT_APP_ROOT** : url to APP root  (Example http://localhost:3000)
 
 ## Run
 
