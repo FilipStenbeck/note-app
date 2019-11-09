@@ -34,7 +34,7 @@ if (process.env.REACT_APP_ROOT) {
     appHost = process.env.REACT_APP_ROOT;
 } else {
     console.log(
-        'No api host set, please use env variable REACT_APP_API_ROOT to set host'
+        'No app host set, please use env variable REACT_APP_ROOT to set host'
     );
 }
 

@@ -14,14 +14,16 @@
         <%- manifest -%>
 
         <title>Taking Notes</title>
+
+        <script>
+            window.config = <%-JSON.stringify(config)%>
+        </script>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
 
         <div id="root"></div>
-        <script>
-            window.config = <%-JSON.stringify(config)%>
-        </script>
+
         <%- scripts -%>
     </body>
 </html>
