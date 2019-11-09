@@ -65,7 +65,6 @@ To make a production optimized build:
 yarn build
 ```
 
-
 ## Run
 
 To run the application using the production ready build and serve it using the included node.js express server. 
@@ -78,7 +77,7 @@ When running the application with _yarn start_ the ENVIRONMENT variables are set
 ## Docker
 
 Build a docker image from the _Dockerfile_ included.
-To start both the app and the needed api. First make sure you have built **both** docker images. Instruction on how to build the docker for the **API**](https://github.com/FilipStenbeck/note-app-api)
+To start both the app and the needed api. First make sure you have built **both** docker images. Instruction on how to build the docker for the [**API**](https://github.com/FilipStenbeck/note-app-api)
 
 The following command can be used to create a docker image of the app:
 
