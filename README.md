@@ -44,7 +44,7 @@ From within the project folder:
 ```sh
 docker-compose up
 ```
-Point your favorite browser to (http://localhost:3000). The database has a few notes prepoulated, so there is something to look at the first time the application is started.
+Point your favorite browser to http://localhost:3000. The database has a few notes prepoulated, so there is something to look at the first time the application is started.
 
 ## Development
 Install and run in the app in development mode:
