@@ -21,6 +21,7 @@ This repo includes a node express server that can be used for servering the app 
 List of major libraries and tools:
 
 -   React (and create-react-app)
+-   React Router
 -   Apollo
 -   Material-UI
 -   Express
