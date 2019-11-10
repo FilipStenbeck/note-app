@@ -12,7 +12,7 @@ All notes are being persited in a database.
 
 ### Architecture
 
-The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
+The application consist of a **React** application and a [**GraphQL backend API**](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to run, so make sure the API is up before starting the frontend application.
 This repo includes a node express webserver that can be used for servering the app once it is built. See below for instructions on how to start the application.
 
