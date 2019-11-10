@@ -26,6 +26,7 @@ export default function NewNote({ initial }) {
     const [saveNote] = useMutation(SAVE_NOTE);
 
     const onSave = () => {
+        if (!note.title) return;
         saveNote({ variables: note });
         setToHome(true);
     };
@@ -51,7 +52,7 @@ export default function NewNote({ initial }) {
                 </FormControl>
 
                 <TextField
-                    id="outlined-basic"
+                    required
                     className={classes.textField}
                     label="Note Titel"
                     margin="normal"

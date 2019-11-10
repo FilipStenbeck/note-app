@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
     note-app:
-        image: note-app:latest
+        image: filipstenbeck/note-app:1.0.1
         restart: always
         env_file:
             - ./.env
@@ -10,7 +10,7 @@ services:
         ports:
             - 3000:3000
     note-app-api:
-        image: note-app-api:latest
+        image: filipstenbeck/note-app-api:1.0.0
         restart: always
 
         ports:
