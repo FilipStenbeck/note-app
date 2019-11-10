@@ -14,17 +14,17 @@ All notes are being persited in a database.
 
 The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to run, so make sure the API is up before starting the frontend application.
-This repo includes a node express server that can be used for servering the app once it is built.
+This repo includes a node express webserver that can be used for servering the app once it is built. See below for instructions on how to start the application.
 
 ### Dependencies (major)
 
 List of major libraries and tools:
 
--   React (and create-react-app)
--   React Router
--   Apollo
--   Material-UI
--   Express
+-   [React](https://github.com/facebook/react) (and [create-react-app](https://github.com/facebook/create-react-app))
+-   [React Router](https://github.com/ReactTraining/react-router)
+-   [Apollo GraphQL](https://github.com/apollographql)
+-   [Material-UI](https://github.com/mui-org/material-ui)
+-   [Express](https://github.com/expressjs/express)
 
 # How to use
 
