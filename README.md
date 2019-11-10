@@ -28,7 +28,9 @@ List of major libraries and tools:
 # How to use
 
 ## Quickstart
-The fastest way to get the app and API up and riunning is using Docker. Both images are pushed to docker hub.
+The fastest way to get the app and API up and running is using Docker. Both images are pushed to docker hub.
+
+### Images
 - filipstenbeck/note-app
 - filipstenbeck/note-app-api
 
