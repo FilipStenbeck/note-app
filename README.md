@@ -36,10 +36,16 @@ The fastest way to get the app and API up and running is using Docker. Both imag
 
 There is a **docker-compose.yaml** file in this repository that can be used to start **both** services:
 
+Clone the repository:
 ```sh
 git clone git@github.com:FilipStenbeck/note-app.git
+```
+From within the project folder:
+```sh
 docker-compose up
 ```
+
+
 ## Development
 Install and run in the app in development mode:
 
