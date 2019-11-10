@@ -32,8 +32,8 @@ List of major libraries and tools:
 The fastest way to get the app and API up and running is using Docker. Both images are pushed to docker hub.
 
 ### Images
-- filipstenbeck/note-app
-- filipstenbeck/note-app-api
+- [filipstenbeck/note-app](https://hub.docker.com/repository/docker/filipstenbeck/note-app)
+- [filipstenbeck/note-app-api](https://hub.docker.com/repository/docker/filipstenbeck/note-app-api)
 
 There is a **docker-compose.yaml** file in this repository that can be used to start **both** services:
 
