@@ -25,8 +25,20 @@ List of major libraries and tools:
 -   Material-UI
 -   Express
 
-## How to use
+# How to use
 
+## Quickstart
+The fastest way to get the app and API up and riunning is using Docker. Both images are pushed to docker hub.
+- filipstenbeck/note-app
+- filipstenbeck/note-app-api
+
+There is a **docker-compose.yaml** file in this repository that can be used to start **both** services:
+
+```sh
+git clone git@github.com:FilipStenbeck/note-app.git
+docker-compose up
+```
+## Development
 Install and run in the app in development mode:
 
 ```sh
@@ -36,7 +48,7 @@ yarn dev
 
 **Important** The app requires that the backend API is up and running to work. Before starting make sure that the API is up.
 
-## Configuration
+### Configuration
 
 For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
 
