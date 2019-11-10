@@ -26,4 +26,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-PLAN.txt
+public/env-config.js
