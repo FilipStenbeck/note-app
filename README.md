@@ -12,21 +12,42 @@ All notes are being persited in a database.
 
 ### Architecture
 
-The application consist of a **React** application and a [**GraphQl backend API**](https://github.com/FilipStenbeck/note-app-api).
+The application consist of a **React** application and a [**GraphQL backend API**](https://github.com/FilipStenbeck/note-app-api).
 The API is needed for the application to run, so make sure the API is up before starting the frontend application.
-This repo includes a node express server that can be used for servering the app once it is built.
+This repo includes a node express webserver that can be used for servering the app once it is built. See below for instructions on how to start the application.
 
 ### Dependencies (major)
 
 List of major libraries and tools:
 
--   React (and create-react-app)
--   Apollo
--   Material-UI
--   Express
+-   [React](https://github.com/facebook/react) (and [create-react-app](https://github.com/facebook/create-react-app))
+-   [React Router](https://github.com/ReactTraining/react-router)
+-   [Apollo GraphQL](https://github.com/apollographql)
+-   [Material-UI](https://github.com/mui-org/material-ui)
+-   [Express](https://github.com/expressjs/express)
 
-## How to use
+# How to use
 
+## Quickstart
+The fastest way to get the app and API up and running is using Docker. Both images are pushed to docker hub.
+
+### Images
+- [filipstenbeck/note-app](https://hub.docker.com/r/filipstenbeck/note-app/tags)
+- [filipstenbeck/note-app-api](https://hub.docker.com/r/filipstenbeck/note-app-api/tags)
+
+There is a **docker-compose.yaml** file in this repository that can be used to start **both** services:
+
+Clone the repository:
+```sh
+git clone git@github.com:FilipStenbeck/note-app.git
+```
+From within the project folder:
+```sh
+docker-compose up
+```
+Point your favorite browser to http://localhost:3000. The database has a few notes prepoulated, so there is something to look at the first time the application is started.
+
+## Development
 Install and run in the app in development mode:
 
 ```sh
@@ -36,7 +57,7 @@ yarn dev
 
 **Important** The app requires that the backend API is up and running to work. Before starting make sure that the API is up.
 
-## Configuration
+### Configuration
 
 For convinience, all needed environment variables is commited in a _.env_ file (I would not do that in a real project)
 
